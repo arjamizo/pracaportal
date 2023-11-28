@@ -2,12 +2,12 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script> -->
   </head>
 <body>
   <div id="app"></div>
   <script type="application/javascript">
-    const load = () => new Vue({
+    window.onVueReady = () => new window.Vue({
       template: `
         <div class="resize overflow-auto">
           <input/>
@@ -17,7 +17,21 @@
       `,
       el: '#app',
     })
-    addEventListener("DOMContentLoaded", load);
+  </script>
+  <script type="application/javascript">
+    {
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js'
+      document.head.appendChild(script)
+      function checkVue() {
+        if (!window.Vue) {
+          setTimeout(checkVue, 10)
+        } else {
+          window.onVueReady()
+        }
+      }
+      script.onload = checkVue;
+    }
   </script>
 </body>
 </html>
