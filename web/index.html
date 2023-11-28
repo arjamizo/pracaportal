@@ -25,14 +25,14 @@
       script = document.createElement('script')
       script.src = 'https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js'
       document.head.appendChild(script)
-      function checkVue() {
-        if (!window.Vue) {
-          setTimeout(checkVue, 10)
+      function checkDependencies() {
+        if (!window.Vue || !window.tailwind) {
+          setTimeout(checkDependencies, 10)
         } else {
           window.onVueReady()
         }
       }
-      script.onload = checkVue;
+      script.onload = checkDependencies;
     }
   </script>
 </body>
