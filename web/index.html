@@ -7,7 +7,7 @@
 <body>
   <div id="app"></div>
   <script type="application/javascript">
-    new Vue({
+    const load = () => new Vue({
       template: `
         <div class="resize overflow-auto">
           <input/>
@@ -17,6 +17,7 @@
       `,
       el: '#app',
     })
+    addEventListener("DOMContentLoaded", load);
   </script>
 </body>
 </html>
