@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+  <div id="app"></div>
+  <script type="application/javascript">
+    window.onVueReady = () => new window.Vue({
+      template: `
+        <div class="resize overflow-auto">
+          <input/>
+          <input/>
+          <button>Zaloguj się</button>
+        </div>
+      `,
+      el: '#app',
+    })
+  </script>
+  <script type="application/javascript">
+    {
+      let script
+      script = document.createElement('script')
+      script.src = 'https://cdn.tailwindcss.com'
+      document.head.appendChild(script)
+      script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js'
+      document.head.appendChild(script)
+      function checkDependencies() {
+        if (!window.Vue || !window.tailwind) {
+          setTimeout(checkDependencies, 10)
+        } else {
+          window.onVueReady()
+        }
+      }
+      script.onload = checkDependencies;
+    }
+  </script>
+</body>
+</html>
