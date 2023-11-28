@@ -6,16 +6,15 @@
   </head>
 <body>
   <div id="app"></div>
-  <script id="x-app" type="text/x-template">
-    <div class="resize overflow-auto">
-      <input/>
-      <input/>
-      <button>Zaloguj się</button>
-    </div>
-  </script>
   <script type="application/javascript">
     new Vue({
-      template: '#x-app',
+      template: `
+        <div class="resize overflow-auto">
+          <input/>
+          <input/>
+          <button>Zaloguj się</button>
+        </div>
+      `,
       el: '#app',
     })
   </script>
