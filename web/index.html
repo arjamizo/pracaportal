@@ -2,14 +2,25 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .input {
+      border-bottom: 5px solid red;
+    }
+    .input::placeholder {
+      color: red;
+    }
+  </style>
 <body>
   <div id="app"></div>
   <script type="application/javascript">
     window.onVueReady = () => new window.Vue({
       template: `
         <div class="resize overflow-auto">
-          <input/>
-          <input/>
+          Login: <input class="input" placeholder="Login"/>
+          Hasło: <input class="input" placeholder="Hasło"/>
           <button>Zaloguj się</button>
         </div>
       `,
