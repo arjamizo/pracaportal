@@ -12,6 +12,13 @@
     .input::placeholder {
       color: red;
     }
+    button {
+      border-radius: 15px;
+      border-color: red;
+    }
+    button:hover {
+      background-color: lightblue;
+    }
   </style>
 <body>
   <div id="app"></div>
@@ -22,7 +29,7 @@
           Login: <input class="input" placeholder="Login"/>
           <input type="text" style="visibility: hidden"/>
           Hasło: <input class="input" placeholder="Hasło"/>
-          <button>Zaloguj się</button>
+          <button class="border">Zaloguj się</button>
         </div>
       `,
       el: '#app',
