@@ -18,8 +18,9 @@
   <script type="application/javascript">
     window.onVueReady = () => new window.Vue({
       template: `
-        <div class="resize overflow-auto">
+        <div class="resize overflow-auto flex flex-col max-w-[380px]">
           Login: <input class="input" placeholder="Login"/>
+          <input type="text" style="visibility: hidden"/>
           Hasło: <input class="input" placeholder="Hasło"/>
           <button>Zaloguj się</button>
         </div>
